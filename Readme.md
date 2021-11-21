@@ -1,11 +1,24 @@
-docker build -t bobmortimer_names .
+# Bob Mortimer Names [![Build Status](https://app.travis-ci.com/dananjayavr/bobmortimer_names.svg?branch=main)](https://app.travis-ci.com/dananjayavr/bobmortimer_names)
 
-docker run -p 8000:8000 --rm -it -d bobmortimer_names
+![Wotsits Wig](https://pbs.twimg.com/media/BXBCXKbIgAAAf3a.jpg)
 
-http://127.0.0.1:8000/v1/name
 
-docker login -u $USER -p $PASSWORD
+### Run tests
+---
+`$ python -m pytest -v tests/test_main.py`
 
-build -f Dockerfile -t dananjaya/bobmortimer_names:latest .
+### Build Docker image
+---
 
-docker push dananjaya/bobmortimer_names:latest
+`docker build -t bobmortimer_names .`
+
+`docker run -p 8000:8000 --rm -it -d bobmortimer_names`
+
+
+### Push Docker image to Docker Hub
+---
+`$ docker login -u $USER -p $PASSWORD`
+
+`$ docker build -f Dockerfile -t dananjaya/bobmortimer_names:latest .`
+
+`$ docker push dananjaya/bobmortimer_names:latest`
