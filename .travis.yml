@@ -13,7 +13,7 @@ os:
   - linux
 brnaches:
   only:
-    - master
+    - main
   except:
     - dev
 # command to install dependencies
