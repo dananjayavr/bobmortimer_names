@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+ENV PORT=$PORT
+
 RUN apk update && apk upgrade
 RUN apk add --no-cache python3 \
                        py3-pip \
@@ -17,4 +19,6 @@ RUN pip3 install -r /requirements.txt
 COPY main.py /main.py
 COPY names.txt /names.txt
 
-CMD ["uvicorn", "main:app","--host", "0.0.0.0"]
+EXPOSE $PORT
+
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT
