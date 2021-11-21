@@ -1,4 +1,6 @@
 import random
+import socket
+import sys
 from fastapi import FastAPI
 
 def get_names_from_file(file):
@@ -19,10 +21,18 @@ def choose_random_name(names):
     return random.choice(names)
 
 app = FastAPI()
+hostname = socket.gethostname()
+version = f"{sys.version_info.major}.{sys.version_info.minor}"
 
 @app.get("/")
 async def root():
-    return {"message": "GET /v1/name to get a random Bob Mortimer name."}
+    return {
+        "name": "bobmortimer_names",
+        "host": hostname,
+        "version": f"From FastAPI running on Uvicorn. Using Python {version}",
+        "message": "Welcome to the Bob Mortimer Names API. GET /v1/name to get a random Bob Mortimer name."
+    }
+
 
 @app.get("/v1/name")
 async def get_name():
