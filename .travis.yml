@@ -1,3 +1,6 @@
+sudo: required
+services:
+  - docker
 language: python
 python:
   - "3.6"      # current default Python on Travis CI
@@ -19,3 +22,6 @@ install:
 # command to run tests
 script:
   - python -m pytest -v tests/test_generator.py
+  
+after_success:
+  - sh .travis/deploy_dockerhub.sh
