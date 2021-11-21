@@ -8,6 +8,7 @@ RUN apk add --no-cache python3 \
 
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install wheel
+RUN pip3 install gunicorn
 
 COPY requirements.txt /requirements.txt
 

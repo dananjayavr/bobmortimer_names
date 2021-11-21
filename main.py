@@ -28,7 +28,6 @@ async def root():
 async def get_name():
     return {"name":choose_random_name(get_names_from_file('names.txt'))}
 
-
 # if __name__ == '__main__':
 #     names = get_names_from_file('names.txt')
 #     for i in range(1):

@@ -1,3 +1,4 @@
 pytest
 fastapi>=0.70
 uvicorn
+gunicorn
