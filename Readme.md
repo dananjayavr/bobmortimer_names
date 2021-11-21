@@ -22,3 +22,23 @@
 `$ docker build -f Dockerfile -t dananjaya/bobmortimer_names:latest .`
 
 `$ docker push dananjaya/bobmortimer_names:latest`
+
+
+### Push Docker image to Heroku
+---
+`heroku login`
+
+`$ heroku create`
+
+`$ heroku plugins:install @heroku-cli/plugin-container-registry`
+
+`$ heroku container:login`
+
+`$ heroku container:push web`
+
+`$ heroku container:release web`
+
+
+### Original Inspiration 
+---
+[How to build a modern CI/CD pipeline - How to build a modern CI/CD pipeline by Rob van der Leek](https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b) 
