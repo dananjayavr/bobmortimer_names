@@ -8,4 +8,4 @@ def test_random_choice_from_list():
 
 def test_random_choice_not_in_list():
     words = ['foo','bar','foobar']
-    assert 'baz' not in choose_random_name(words)
+    assert choose_random_name(words) != 'baz'
