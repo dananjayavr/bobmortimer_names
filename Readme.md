@@ -7,15 +7,15 @@
 ---
 `$ python -m pytest -v tests/test_main.py`
 
-### Build Docker image
+### Build & run Docker image
 ---
 
-`docker build -t bobmortimer_names .`
+`$ docker build -t bobmortimer_names .`
 
-`docker run -p 8000:8000 --rm -it -d bobmortimer_names`
+`$ docker run -p 8000:8000 --rm -it -d bobmortimer_names`
 
 
-### Push Docker image to Docker Hub
+### Build & push Docker image to Docker Hub
 ---
 `$ docker login -u $USER -p $PASSWORD`
 
@@ -26,7 +26,7 @@
 
 ### Push Docker image to Heroku
 ---
-`heroku login`
+`$ heroku login`
 
 `$ heroku create`
 
@@ -41,4 +41,4 @@
 
 ### Original Inspiration 
 ---
-[How to build a modern CI/CD pipeline - How to build a modern CI/CD pipeline by Rob van der Leek](https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b) 
+[How to build a modern CI/CD pipeline - Rob van der Leek](https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b) 
