@@ -1,6 +1,6 @@
 import unittest
 
-from generator import choose_random_name
+from main import choose_random_name
 
 def test_random_choice_from_list():
     words = ['foo','bar','foobar']
