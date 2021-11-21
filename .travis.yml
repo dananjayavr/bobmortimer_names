@@ -8,6 +8,11 @@ python:
   - "nightly"  # nightly build
 os:
   - linux
+brnaches:
+  only:
+    - master
+  except:
+    - dev
 # command to install dependencies
 install:
   - pip install -r requirements.txt
